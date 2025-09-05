@@ -1,0 +1,431 @@
+/* General */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #f4f4f4, #e0e0e0);
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #d1a1d7;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.logo {
+  width: 170px;
+  height: 170px;
+  border-radius: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+/* Imagen 6 debajo del header */
+.imagen-6-abajo-header {
+  text-align: center;
+  margin: 2.5rem 0 3.5rem;
+}
+
+.imagen-6-abajo-header img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #555;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+.imagen-6-abajo-header p {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* Contenedor fotos y secretarías */
+.secretarias-contenedor {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Fotos laterales */
+.fotos-lado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.foto-item {
+  text-align: center;
+}
+
+.foto-item img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #f108f1;
+  box-shadow: 0 0 6px rgba(234, 29, 234, 0.2);
+}
+
+.foto-item p {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Círculo secretarías */
+.secretarias {
+  width: 535px;
+  height: 535px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  position: relative;
+  margin: 2rem auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.secretarias .card {
+  width: 160px;
+  height: 160px;
+  background: #fff;
+  border: 2px solid #5b5b5b;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  box-shadow: 0 0 6px rgba(0,0,0,.1);
+  transform-origin: center center;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.secretarias .card:not(.center) {
+  transform-origin: 0 50%;
+  top: 50%;
+  left: 50%;
+  transform:
+    rotate(calc(var(--i) * 60deg))
+    translate(190px)
+    rotate(calc(var(--i) * -60deg))
+    translate(-50%, -50%);
+}
+
+.secretarias .card.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #b901ad;
+  border: 3px solid #333;
+  z-index: 2;
+  box-shadow: 0 0 15px #b901ad;
+}
+
+.secretarias .card:not(.center):hover {
+  transform:
+    rotate(calc(var(--i) * 60deg))
+    translate(190px)
+    rotate(calc(var(--i) * -60deg))
+    translate(-50%, -50%)
+    scale(1.15)
+    rotate(10deg);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+/* Videos */
+.videos {
+  padding: 2rem;
+  background: #e9e9e9;
+}
+
+.videos h2 {
+  text-align: center;
+}
+
+.mensaje-unico {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.video-item {
+  text-align: center;
+}
+
+.video-hashtag {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+.video-grid iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+}
+
+/* Contacto */
+.contacto {
+  background: #e9e9e9;
+  padding: 2rem;
+}
+
+.contacto-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.contacto-info {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 220px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.contacto-info h3 {
+  margin-top: 0;
+  color: rgb(0, 0, 0);
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input, textarea {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 0.75rem;
+  border: none;
+  background: #e80606;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Botón descarga */
+.btn-descarga {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background-color: #5b5b5b;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-descarga:hover {
+  background-color: #333;
+}
+
+/* Sugerencias */
+.sugerencias {
+  padding: 2rem;
+  background: #d1a1d7;
+  text-align: center;
+}
+
+.sugerencias textarea {
+  width: 90%;
+  max-width: 600px;
+  height: 150px;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  background: #5b5b5b;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.social a {
+  color: #fa03b0;
+  margin: 0 0.5rem;
+}
+
+.social a:hover {
+  color: #ff0026;
+}
+
+/* Programa De Trabajo */
+.Plan\ De\ Trabajo {
+  background-color: #e6d6f5;
+  color: #4b004b;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.Plan\ De\ Trabajo ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.Plan\ De\ Trabajo ul li {
+  margin-bottom: 0.8rem;
+  padding-left: 20px;
+  position: relative;
+}
+
+.Plan\ De\ Trabajo ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  background-color: #800080;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+  .secretarias {
+    width: 300px;
+    height: 300px;
+  }
+  .secretarias .card {
+    width: 90px;
+    height: 90px;
+    font-size: 0.75rem;
+  }
+  .secretarias-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .secretarias {
+    width: 250px;
+    height: 250px;
+  }
+  .secretarias .card {
+    width: 75px;
+    height: 75px;
+    font-size: 0.65rem;
+  }
+.btn-tabla {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #0a0a0a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.btn-tabla:hover {
+  background-color: #a000a0;
+}
+.contenedor-boton-tabla {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: -1rem; /* un poco más cerca del título "Videos" */
+}
+
+.btn-tabla {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #800080;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.btn-tabla:hover {
+  background-color: #a000a0;
+}
+/* Botón entre secretarías y videos */
+.contenedor-boton-izquierda {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 2rem;
+  margin: 2rem 0 -1rem;
+}
+
+.btn-tabla {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: #800080;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.btn-tabla:hover {
+  background-color: #a000a0;
+}
+
+/* Responsive: centrar botón en pantallas pequeñas */
+@media (max-width: 768px) {
+  .contenedor-boton-izquierda {
+    justify-content: center;
+    padding-left: 0;
+  }
+}
+
+}
